@@ -1,4 +1,11 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+
+export interface IChat extends Document {
+  username: string;
+  message: string;
+  room?: string;
+  createdAt: Date;
+}
 
 const ChatSchema = new mongoose.Schema(
   {
@@ -9,4 +16,4 @@ const ChatSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const Chat = mongoose.model('Chat', ChatSchema);
+export const Chat = mongoose.model("Chat", ChatSchema);
